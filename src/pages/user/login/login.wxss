@@ -1,0 +1,48 @@
+#user-login .tips {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 35px;
+  background-color: #e64340;
+  height: 35px;
+  color: #FFFFFF;
+}
+#user-login .input-box {
+  margin-top: 35px;
+  background: #ffffff;
+}
+#user-login .input-box .item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+}
+#user-login .input-box .item .name {
+  width: 80px;
+}
+#user-login .input-box .item input {
+  flex: 1;
+}
+#user-login .auto-box {
+  color: #9b9b9b;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  justify-content: space-between;
+}
+#user-login .auto-box .auto .checkbox {
+  display: flex;
+  align-items: center;
+}
+#user-login .agreement {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+#user-login .agreement .checkbox {
+  display: flex;
+  align-items: center;
+}
+#user-login button {
+  margin: 15px 20px;
+}

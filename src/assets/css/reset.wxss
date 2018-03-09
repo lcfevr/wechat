@@ -1,0 +1,13 @@
+page {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 14px;
+    background-color: #EFEFF4;
+    line-height: 1.6;
+    /*-webkit-text-size-adjust: 100%;*/
+    /*-ms-text-size-adjust: 100%;*/
+    /*-webkit-user-select: none;*/
+    /*-webkit-overflow-scrolling: touch;*/
+    /*overflow-scrolling: touch;*/
+}

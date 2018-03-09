@@ -1,0 +1,239 @@
+<view id="user-index">
+    <view class="user-info">
+        <view class="info-top">
+            <view class="info-img" bindtap="jump">
+                <image src="{{info.clerk.avatar_url}}" />
+            </view>
+            <view class="info-name" bindtap="jump">
+                <view class="name-box">
+                    <view class="name">
+                        {{info.clerk.nickname}}
+                    </view>
+                    <view class="type">{{info.clerk.is_clerk_owner ? '店长':'导购'}}</view>
+                </view>
+                <view class="adderss">
+                    {{info.clerk.shops.shop_info.name}}
+                </view>
+            </view>
+            <view class="info-code iconfont icon-erweima" bindtap="change">
+
+            </view>
+        </view>
+
+        <view class="info-bottom mx-1px-top">
+            <view class="item">
+                <view class="title">
+                    本月订单
+                </view>
+                <view class="num">
+                    {{info.order_count}}
+                </view>
+            </view>
+            <view class="item mx-1px-left-right">
+                <view class="title">
+                    本月销售
+                </view>
+                <view class="num">
+                    ￥{{info.order_total}}
+                </view>
+            </view>
+            <view class="item">
+                <view class="title">
+                    云货架
+                </view>
+                <view class="num">
+                    100
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="item-box" wx:if="{{info.clerk.is_clerk_owner}}">
+        <view class="tiele mx-1px-bottom" data-owner="1" data-type="0" bindtap="jumpOrder">
+            <view class="name">
+                门店订单
+            </view>
+            <view class="all">
+                <view>全部订单</view>
+                 <i class="iconfont icon-BackChevron"></i>
+            </view>
+        </view>
+        <view class="son-item-box">
+            <view class="item" data-owner="1" data-type="1" bindtap="jumpOrder">
+                <view class="box">
+                    <view class="icon-box">
+                        <i class="iconfont icon-daifukuan"></i>
+                        <!--<view class="dot">-->
+
+                        <!--</view>-->
+                    </view>
+                </view>
+                <view class="text">待付款</view>
+            </view>
+            <view class="item" data-owner="1" data-type="2" bindtap="jumpOrder">
+                <view class="box">
+                    <view class="icon-box">
+                        <i class="iconfont icon-daifahuo"></i>
+                        <!--<view class="dot">-->
+
+                        <!--</view>-->
+                    </view>
+                </view>
+                <view class="text">待发货</view>
+            </view>
+            <view class="item" data-owner="1" data-type="3" bindtap="jumpOrder">
+                <view class="box">
+                    <view class="icon-box">
+                        <i class="iconfont icon-daishouhuo"></i>
+                        <!--<view class="dot">-->
+
+                        <!--</view>-->
+                    </view>
+                </view>
+                <view class="text">待收货</view>
+            </view>
+            <view class="item">
+                <view class="box">
+                    <view class="icon-box">
+                        <i class="iconfont icon-tuihuanhuo"></i>
+                        <!--<view class="dot">-->
+
+                        <!--</view>-->
+                    </view>
+                </view>
+                <view class="text" bindtap="jumpAfterSale">退换/售后</view>
+            </view>
+        </view>
+    </view>
+    <view class="item-box">
+        <view class="tiele mx-1px-bottom">
+            <view class="name">
+                常用操作
+            </view>
+        </view>
+        <view class="son-item-box common">
+            <view class="item" bindtap="jumpShop">
+                <view class="box">
+                    <view class="icon-box money">
+                        <i class="iconfont icon-shouyin"></i>
+                    </view>
+                </view>
+                <view class="text">开单收银</view>
+            </view>
+            <view class="item" bindtap="jumpUser">
+                <view class="box">
+                    <view class="icon-box user">
+                        <i class="iconfont icon-huiyuantubiao"></i>
+                    </view>
+                </view>
+                <view class="text">会员管理</view>
+            </view>
+            <view class="item" bindtap="jumpRecharge">
+                <view class="box">
+                    <view class="icon-box shopping">
+                        <i class="iconfont icon-chongzhi"></i>
+                    </view>
+                </view>
+                <view class="text">会员充值</view>
+            </view>
+        </view>
+    </view>
+    <view class="item-box">
+        <view class="tiele mx-1px-bottom">
+            <view class="name">
+                我的
+            </view>
+        </view>
+        <view class="son-item-box common">
+            <view class="item" bindtap="jumpAchievement">
+                <view class="box">
+                    <view class="icon-box achievement">
+                        <i class="iconfont icon-wodeyeji"></i>
+                    </view>
+                </view>
+                <view class="text">我的业绩</view>
+            </view>
+            <view class="item" bindtap="jumpOrder" data-owner="0" data-type="0">
+                <view class="box">
+                    <view class="icon-box order">
+                        <i class="iconfont icon-wodedingdan"></i>
+                    </view>
+                </view>
+                <view class="text">我的订单</view>
+            </view>
+            <view class="item" bindtap="jumpCarry">
+                <view class="box">
+                    <view class="icon-box commission">
+                        <i class="iconfont icon-wodeticheng"></i>
+                    </view>
+                </view>
+                <view class="text">我的提成</view>
+            </view>
+            <view class="item" bindtap="jumpRecord">
+                <view class="box">
+                    <view class="icon-box commission">
+                        <i class="iconfont icon-fenzu"></i>
+                    </view>
+                </view>
+                <view class="text">充值记录</view>
+            </view>
+        </view>
+    </view>
+    <view class="item-box" >
+        <view class="tiele mx-1px-bottom">
+            <view class="name">
+                店长权限
+            </view>
+        </view>
+        <view class="son-item-box common">
+            <view class="item" bindtap="jumpGuideManager">
+                <view class="box">
+                    <view class="icon-box shopping">
+                        <i class="iconfont icon-daogouguanli"></i>
+                    </view>
+                </view>
+                <view class="text">导购管理</view>
+            </view>
+            <view class="item" bindtap="jumpScoreChange">
+                <view class="box">
+                    <view class="icon-box achievement">
+                        <i class="iconfont icon-jifenxiugai"></i>
+                    </view>
+                </view>
+                <view class="text">积分修改</view>
+            </view>
+            <view class="item" bindtap="jumpAmountChange">
+                <view class="box">
+                    <view class="icon-box order">
+                        <i class="iconfont icon-yuexiugai"></i>
+                    </view>
+                </view>
+                <view class="text">余额修改</view>
+            </view>
+        </view>
+    </view>
+
+
+    <view class="alert" hidden="{{!showAlert}}" >
+        <view class="mask" catchtouchmove="move"  bindtap="close">
+
+        </view>
+        <view class="info" catchtouchmove="move">
+            <view class="img-box">
+                <image src="{{info.clerk.avatar}}" />
+            </view>
+            <view class="name">
+                {{info.clerk.nickname}}
+            </view>
+            <view class="adderss">
+                {{info.clerk.shops.shop_info.name}}
+            </view>
+            <view class="code">
+                <image src="{{info.clerk.shops.qr_code_url}}" />
+            </view>
+            <view class="title">
+                扫一扫加入会员
+            </view>
+        </view>
+    </view>
+</view>

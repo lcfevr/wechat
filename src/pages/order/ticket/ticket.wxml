@@ -1,0 +1,87 @@
+<view class="ticket">
+    <view class="logo">
+        <image  src="{{meta.img.logo}}"></image>
+    </view>
+
+    <ul class="storeInfo">
+        <li>商店名称：{{meta.shop.name}}</li>
+        <li>地址：{{meta.shop.address}}</li>
+        <li>电话：{{meta.shop.phone}}</li>
+        <li>微信扫描二维码米尔童装公众号，了解最新信息</li>
+    </ul>
+    <view class="order_detail">
+        <li>订单编号：{{order.order_no}}</li>
+        <li>交易时间： {{order.submit_time}}</li>
+        <li><span>导购：{{order.shop_order.clerk.name}}   </span><span> 收银员：{{order.shop_order.clerk.name}}</span></li>
+    </view>
+
+    <view class="goods_list">
+        <ul wx:for="{{order.items}}">
+            <li>
+                <span>{{item.item_sku}}</span>
+                <span>×  {{item.quantity}}</span>
+                <span>{{item.items_total_yuan}}</span>
+            </li>
+            <li>{{item.item_name}}（{{item.item_meta.specs_text}}）</li>
+        </ul>
+    </view>
+
+    <view class="count_all">
+        <view class="count"><span>小计</span><span>×  {{order.count}}</span><span></span></view>
+        <ul class="money">
+            <li><span>*商品金额</span><span>{{order.items_total_yuan}}</span></li>
+            <li><span>*优惠金额</span><span> {{order.adjustments_total_yuan}}</span></li>
+        </ul>
+    </view>
+
+    <view class="total">
+        <span>
+            TOTAL 总计
+        </span>
+        <span>
+            ¥ {{order.total_yuan}}
+        </span>
+    </view>
+
+    <view class="payType">
+        <ul>
+            <li>
+                <span>支付方式</span>
+                <span>金额</span>
+                <span>找零</span>
+            </li>
+            <li>
+                <span>{{order.payment_text}}</span>
+                <span>¥ {{order.total_yuan}}</span>
+                <span>¥ 00.00</span>
+            </li>
+            <!--<li>-->
+                <!--<span>余额支付</span>-->
+                <!--<span>¥ 679.97</span>-->
+                <!--<span>¥ 00.00</span>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<span>合计</span>-->
+                <!--<span>¥ 679.97</span>-->
+                <!--<span>¥ 00.00</span>-->
+            <!--</li>-->
+        </ul>
+    </view>
+
+    <view class="score"><span>本次获得积分</span><span>{{meta.point}}</span></view>
+    <view class="score"><span>累计积分</span><span>{{meta.total_point}}</span></view>
+    <view class="split">***   谢谢惠顾   ***</view>
+
+    <ul class="explain">
+        <li>1. 小票是您消费的唯一凭证，请妥善保存。</li>
+        <li>2. 30天内可凭有效票据及原始吊牌退换货。</li>
+        <li>3. 如发生退货，赠品退回。</li>
+        <li>4. 袜子/内裤 一经售出，概不退换。</li>
+    </ul>
+    <view>关爱至上，真心服务</view>
+    <image class="wechat_logo"  src="{{meta.img.wechat}}"></image>
+    <view class="btn">
+        <view class="btn-child g mx-1px-top" bindtap="back">取消</view>
+        <view class="btn-child w mx-1px-top" bindtap="print">打印</view>
+    </view>
+</view>

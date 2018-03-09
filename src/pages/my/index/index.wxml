@@ -1,0 +1,62 @@
+<view id="my-index">
+    <view class="item mx-1px-bottom">
+        <view class="left">
+            头像
+        </view>
+        <view class="right" bindtap="updateImg">
+            <image src="{{userInfo.avatar}}" />
+            <i class="iconfont icon-BackChevron"></i>
+        </view>
+    </view>
+    <view class="item mx-1px-bottom" bindtap="close">
+        <view class="left">
+            昵称
+        </view>
+        <view class="right">
+            {{userInfo.nickname}}
+            <i class="iconfont icon-BackChevron"></i>
+        </view>
+    </view>
+    <view class="item mx-1px-bottom">
+        <view class="left">
+            手机号码
+        </view>
+        <view class="right">
+            {{userInfo.mobile}}
+        </view>
+    </view>
+    <view class="item" bindtap="jump">
+        <view class="left">
+            修改密码
+        </view>
+        <view class="right">
+            <i class="iconfont icon-BackChevron"></i>
+        </view>
+    </view>
+
+    <button type="default" bindtap="out">退出当前账号</button>
+
+
+
+    <view class="alert" hidden="{{!showName}}">
+        <view class="mask">
+
+        </view>
+        <view class="info">
+            <view class="title">
+                修改昵称
+            </view>
+            <view class="input-box mx-1px-bottom">
+                <input type="text" bindinput="input" maxlength="10" />
+            </view>
+            <view class="buttom-box mx-1px-left-top">
+                <view bindtap="close">
+                    取消
+                </view>
+                <view class="submit mx-1px-left" bindtap="submit">
+                    确定
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

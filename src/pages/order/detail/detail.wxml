@@ -1,0 +1,344 @@
+<view id="order-detail">
+    <view class="border-box">
+        <view class="order-item">
+            <view class="order-line">
+                <view class="item-top">
+                    <view class="indent mx-1px-bottom">
+                        <view class="order-num">
+                            订单编号：{{order.order_no}}
+                        </view>
+                        <view class="user">
+                            <i class="iconfont icon-yonghu"></i><span>{{order.user.nick_name}}</span>
+                        </view>
+                    </view>
+                </view>
+                <view class="item-middle">
+                    <view class="middle-item mx-1px-bottom" wx:for="{{order.items}}">
+                        <view class="goods">
+                            <image src="{{item.item_meta.image}}" />
+                            <view class="text">
+                                <view class="names">
+                                    {{item.item_name}}
+                                </view>
+                                <view class="model">
+                                    <view class="money">
+                                        ￥{{item.units_total_yuan}}
+                                    </view>
+                                    <view class="num">
+                                        {{item.quantity}}件 {{item.item_meta.specs_text}}
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <!--<view class="service">-->
+                            <!--<view>申请售后</view>-->
+                            <!--&lt;!&ndash;<view>售后状态</view>&ndash;&gt;-->
+                        <!--</view>-->
+                    </view>
+                </view>
+                <view class="item-bottom">
+                    <view class="guide">导购 <span>{{order.shop_order.clerk.name}}</span></view>
+                    <view class="all-money">
+                        {{order.count}}件，共计 <span>¥{{order.total_yuan}}</span>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!--<view class="order-item">-->
+            <!--<view class="title">-->
+                <!--收货信息-->
+            <!--</view>-->
+            <!--<view class="order-info">-->
+                <!--<view class="info-item">-->
+                    <!--<view class="name">-->
+                        <!--地址 :-->
+                    <!--</view>-->
+                    <!--<view class="text">-->
+                        <!--{{order.address_name}} {{order.address}}-->
+                    <!--</view>-->
+                <!--</view>-->
+                <!--<view class="info-item">-->
+                    <!--<view class="name">-->
+                        <!--姓名 :-->
+                    <!--</view>-->
+                    <!--<view class="text">-->
+                        <!--{{order.accept_name}}-->
+                    <!--</view>-->
+                <!--</view>-->
+                <!--<view class="info-item">-->
+                    <!--<view class="name">-->
+                        <!--电话 :-->
+                    <!--</view>-->
+                    <!--<view class="text">-->
+                        <!--{{order.mobile}}-->
+                    <!--</view>-->
+                <!--</view>-->
+            <!--</view>-->
+        <!--</view>-->
+        <!--待发货状态-->
+        <!--<view class="send">-->
+            <!--<view class="logistics">-->
+                <!--<view class="text">-->
+                    <!--物流公司-->
+                <!--</view>-->
+                <!--<view class="input-box">-->
+
+                    <!--<picker bindchange="bindPickerChange" range-key="name" range="{{objectArray}}">-->
+                        <!--<input type="text" value="{{objectArray[index].name}}" disabled placeholder="请选择物流公司" />-->
+                    <!--</picker>-->
+                    <!--<i class="iconfont icon-BackChevron"></i>-->
+                <!--</view>-->
+            <!--</view>-->
+
+            <!--<view class="Waybill">-->
+                <!--<view class="text">-->
+                    <!--运单号-->
+                <!--</view>-->
+                <!--<view class="mx-1px-bottom">-->
+                    <!--<input type="text" placeholder="请输入运单号码" />-->
+                <!--</view>-->
+            <!--</view>-->
+        <!--</view>-->
+        <view class="order-item">
+            <view class="title">
+                订单信息
+            </view>
+            <view class="order-info">
+                <view class="info-item">
+                    <view class="name">
+                        订单编号 :
+                    </view>
+                    <view class="text">
+                        {{order.order_no}}
+                    </view>
+                </view>
+                <view class="info-item">
+                    <view class="name">
+                        订单来源 :
+                    </view>
+                    <view class="text">
+                        {{order.from}}
+                    </view>
+                </view>
+                <view class="info-item">
+                    <view class="name">
+                        支付方式 :
+                    </view>
+                    <view class="text">
+                        {{order.payment_text}}
+                    </view>
+                </view>
+                <view class="info-item">
+                    <view class="name">
+                        下单时间 :
+                    </view>
+                    <view class="text">
+                        {{order.submit_time}}
+                    </view>
+                </view>
+                <view class="info-item">
+                    <view class="name">
+                        本次导购
+                    </view>
+                    <view class="text">
+                        {{order.shop_order.clerk.name}}
+                    </view>
+                </view>
+                <view class="info-item" wx:if="{{order.status==6}}">
+                    <view class="name">
+                        取消原因 :
+                    </view>
+                    <view class="text">
+                        {{order.cancel_reason}}
+                    </view>
+                </view>
+                <view class="info-item" wx:if="{{order.status==6}}">
+                    <view class="name">
+                        取消时间 :
+                    </view>
+                    <view class="text">
+                        {{order.updated_at}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!--<view class="order-item">-->
+            <!--<view class="title">-->
+                <!--发票信息-->
+            <!--</view>-->
+            <!--<view class="order-info">-->
+                <!--{{order.invoices[0]?order.invoices[0].content:"暂无发票信息"}}-->
+            <!--</view>-->
+        <!--</view>-->
+        <view class="order-item">
+            <view class="title">
+                备注
+            </view>
+            <view class="order-info">
+                {{order.note || order.message || '暂无备注'}}
+            </view>
+        </view>
+        <view class="order-detail-info">
+            <view class="item">
+                <view class="name">
+                    商品件数：
+                </view>
+                <view class="num">
+                    {{order.count}}件
+                </view>
+            </view>
+            <view class="item">
+                <view class="name">
+                    商品金额：
+                </view>
+                <view class="num">
+                    ￥{{order.items_total_yuan}}
+                </view>
+            </view>
+            <view class="item">
+                <view class="name">
+                    积分抵扣：
+                </view>
+                <view class="num">
+                    {{order.adjustment_point}}积分
+                </view>
+            </view>
+            <view class="item">
+                <view class="name">
+                    优惠抵扣：
+                </view>
+                <view class="num">
+                    {{order.adjustments_total_yuan}}
+                </view>
+            </view>
+            <view class="item">
+                <view class="name">
+                    运费：
+                </view>
+                <view class="num">
+                    {{order.payable_freight}}
+                </view>
+            </view>
+            <view class="item">
+                <view class="name big">
+                    实付金额：
+                </view>
+                <view class="num big-money">
+                    ￥{{order.total_yuan}}
+                </view>
+            </view>
+        </view>
+        <view class="order-item" wx:if="{{order.status == 2 || order.status == 3 || order.status == 4 || order.status == 5}}">
+            <view class="title">
+                <span wx:if="{{!order.shop_order.images.length}}">上传小票</span>
+                <span wx:else>查看小票</span>
+            </view>
+            <view class="down-box">
+                <view class="img-box" wx:if="{{img.length}}">
+                    <view class="img-item" wx:for="{{img}}">
+                        <image src="{{item}}" catchtap="preview" />
+                        <icon type="clear" data-index="{{index}}" size="25"  catchtap="delete" wx:if="{{!order.shop_order.images.length}}" />
+                    </view>
+                </view>
+                <view class="down" bindtap="upload" wx:if="{{img.length < 3 && !order.shop_order.images.length}}">
+                   <i class="iconfont icon-shangchuan"></i>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="button-type" wx:if="{{order.status == 2 || order.status == 3 || order.status == 4 || order.status == 5}}">
+        <!--<view class="send">-->
+            <!--发货-->
+        <!--</view>-->
+        <!--<view class="type-submit">-->
+            <!--<view class="clone">-->
+                <!--关闭-->
+            <!--</view>-->
+            <!--<view class="pay">-->
+                <!--<i class="iconfont icon-saoma"></i>-->
+                <!--扫码支付-->
+            <!--</view>-->
+        <!--</view>-->
+        <view class="send"  bindtap="toTicket"  data-no="{{norder_no}}">
+            打印收银单据
+        </view>
+    </view>
+
+
+    <view class="pay-type" hidden="{{!showPay}}">
+        <view class="mask" catchtouchmove="move">
+
+        </view>
+        <view class="type-box" catchtouchmove="move">
+            <view class="title mx-1px-bottom">
+                请选择支付方式
+            </view>
+            <radio-group bindchange="payType">
+                <view class="pay-item mx-1px-bottom">
+                    <label class="left" for="zhifubao">
+                        <view class="iconfont icon-zhifubao">
+
+                        </view>
+                        <view class="info-box">
+                            <view>支付宝支付</view>
+                            <view class="text">使用支付宝扫描二维码支付</view>
+                        </view>
+                    </label>
+                    <view class="right">
+                        <radio value="ali_scan_pay"  id="zhifubao" />
+                    </view>
+                </view>
+                <view class="pay-item mx-1px-bottom">
+                    <label for="weixin" class="left">
+                        <view class="iconfont icon-weixin">
+
+                        </view>
+                        <view class="info-box">
+                            <view>微信支付</view>
+                            <view class="text">使用微信扫描二维码支付</view>
+                        </view>
+                    </label>
+                    <view class="right">
+                        <radio value="wx_pub_qr" checked=""  id="weixin" />
+                    </view>
+                </view>
+                <view class="pay-item mx-1px-bottom">
+                    <label for="xianjin" class="left">
+                        <view class="iconfont icon-xianjin">
+
+                        </view>
+                        <view class="info-box">
+                            <view>现金支付</view>
+                            <view class="text">使用现金支付</view>
+                        </view>
+                    </label>
+                    <view class="right">
+                        <radio value="cash_pay"  id="xianjin"/>
+                    </view>
+                </view>
+                <view class="pay-item mx-1px-bottom">
+                    <label for="yinlianqia" class="left">
+                        <view class="iconfont icon-yinlianqia">
+
+                        </view>
+                        <view class="info-box">
+                            <view>刷卡支付</view>
+                            <view class="text">使用门店POS机收银</view>
+                        </view>
+                    </label>
+                    <view class="right">
+                        <radio value="pop_cash_pay"  id="yinlianqia" />
+                    </view>
+                </view>
+            </radio-group>
+            <view class="buttom-box">
+                <view class="close mx-1px-right" bindtap="close">
+                    取消
+                </view>
+                <view class="submit">
+                    确定
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

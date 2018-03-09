@@ -1,0 +1,47 @@
+#user-reset .tips {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 35px;
+  background-color: #e64340;
+  height: 35px;
+  color: #FFFFFF;
+}
+#user-reset .input-box {
+  background: #ffffff;
+  margin-top: 35px;
+}
+#user-reset .input-box .phone {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  height: 46px;
+  line-height: 46px;
+}
+#user-reset .input-box .phone .name {
+  width: 90px;
+}
+#user-reset .input-box .phone input {
+  flex: 1;
+}
+#user-reset .input-box .phone .code {
+  padding-left: 15px;
+  text-align: center;
+  color: #1aad19;
+  border-left: 1px solid #e5e5e5;
+}
+#user-reset .input-box .item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+}
+#user-reset .input-box .item .name {
+  width: 90px;
+}
+#user-reset .input-box .item input {
+  flex: 1;
+}
+#user-reset button {
+  margin: 50px 20px;
+}

@@ -1,0 +1,87 @@
+<view id="my-achievement">
+    <view class="table">
+        <view class="line">
+            <view class="item">
+                <view class="money">
+                    ￥{{data.total_today}}
+                </view>
+                <view class="text">
+                    今日销售
+                </view>
+            </view>
+            <view class="item mx-1px-left-right">
+                <view class="money">
+                   {{data.order_today}}
+                </view>
+                <view class="text">
+                    今日订单
+
+                </view>
+            </view>
+            <view class="item">
+                <view class="money">
+                    {{data.user_today}}
+                </view>
+                <view class="text">
+                    今日新增会员
+                </view>
+            </view>
+        </view>
+        <view class="line mx-1px-top">
+            <view class="item">
+                <view class="money">
+                    ￥{{data.total_7_day}}
+                </view>
+                <view class="text">
+                    近七天销售
+                </view>
+            </view>
+            <view class="item mx-1px-left-right">
+                <view class="money">
+                    {{data.order_7_day}}
+                </view>
+                <view class="text">
+                    近七天订单
+                </view>
+            </view>
+            <view class="item">
+                <view class="money">
+                    {{data.user_7_day}}
+                </view>
+                <view class="text">
+                    近七天新增会员
+                </view>
+            </view>
+        </view>
+        <view class="line mx-1px-top">
+            <view class="item">
+                <view class="money">
+                    ￥{{data.total_30_day}}
+                </view>
+                <view class="text">
+                    近一月销售
+                </view>
+            </view>
+            <view class="item mx-1px-left-right">
+                <view class="money">
+                    {{data.order_30_day}}
+                </view>
+                <view class="text">
+                    近一月订单
+                </view>
+            </view>
+            <view class="item">
+                <view class="money">
+                    {{data.user_30_day}}
+                </view>
+                <view class="text">
+                    近一月新增会员
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="look" bindtap="jump">
+        查看我的提成
+    </view>
+</view>

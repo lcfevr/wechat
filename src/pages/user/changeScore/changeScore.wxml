@@ -1,0 +1,46 @@
+<view id="changeScore">
+    <p class="tag">会员信息</p>
+    <view class="line-box mx-1px-bottom">
+        <span>会员昵称</span>
+        <span>{{member.user_bind.user.nick_name}}</span>
+    </view>
+    <view class="line-box mx-1px-bottom">
+        <span>会员卡号</span>
+        <span>{{member.user_bind.user.card.number}}</span>
+    </view>
+    <view class="line-box mx-1px-bottom">
+        <span>当前{{type == 'score' ? '积分':'金额'}}</span>
+        <span wx:if="{{type == 'score'}}">{{initScore}}</span>
+        <span wx:else>{{initAmount}}</span>
+    </view>
+
+    <p class="tag">操作{{type == 'score' ? '积分':'金额'}}</p>
+    <view class="line-box item-box" bindtap="showSelect">
+        <span class="grey">{{type == 'score' ? '积分':'金额'}}类型</span>
+        <view>
+            <span>{{currentData.text}}</span>
+        </view>
+    </view>
+    <view class="line-box item-box">
+        <span class="grey">{{type == 'score' ? '积分':'金额'}}数量</span>
+        <input class="text" value="{{currentData.value}}" type="number" bindinput="changevalue"></input>
+    </view>
+    <view class="line-box item-box">
+        <span class="grey">备注</span>
+        <input class="text" value="{{currentData.note}}" bindinput="changeNote"></input>
+    </view>
+
+
+
+
+    <button class="sure" bindtap="submit">确定</button>
+</view>
+
+<view class="pop-black" hidden="{{show_select}}" animation="{{black.animation}}"></view>
+<view class="action-sheet" hidden="{{show_select}}" animation="{{show.animation}}" >
+        <view class="head mx-1px-bottom">请选择{{type == 'score' ? '积分':'金额'}}类型</view>
+        <view class="item mx-1px-bottom" bindtap="selectType" data-item="{{item.type}}" wx:for="{{category}}">{{item.text}}</view>
+
+        <view class="item mx-1px-bottom cancel" bindtap="closeSelect">取消</view>
+
+</view>

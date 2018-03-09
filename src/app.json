@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/user/login/login",
+    "pages/user/index/index",
+    "pages/user/reset/reset",
+    "pages/order/index/index",
+    "pages/order/detail/detail",
+    "pages/order/search/search",
+    "pages/my/index/index",
+    "pages/my/achievement/achievement",
+    "pages/my/carry/carry",
+    "pages/address/index/index",
+    "pages/address/list/list",
+    "pages/address/add/add",
+    "pages/order/ticket/ticket",
+    "pages/user/changeScore/changeScore"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#000"
+  },
+  "tabBar": {
+    "color": "#888888",
+    "backgroundColor": "#ffffff",
+    "selectedColor":"#e63237",
+    "list": [
+      {
+        "pagePath":"pages/store/cart/cart",
+        "text": "收银台",
+        "iconPath": "assets/image/money.png",
+        "selectedIconPath": "assets/image/money-red.png"
+
+      },
+      {
+        "pagePath":"pages/user/index/index",
+        "text": "我的",
+        "iconPath": "assets/image/user.png",
+        "selectedIconPath": "assets/image/user-red.png"
+      }
+    ]
+  }
+}

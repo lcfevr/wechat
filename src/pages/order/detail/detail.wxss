@@ -1,0 +1,338 @@
+#order-detail {
+  font-size: 15px;
+}
+#order-detail .border-box {
+  padding-bottom: 50px;
+}
+#order-detail .border-box .order-item .title {
+  height: 35px;
+  line-height: 35px;
+  color: #888;
+  padding: 0 15px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#order-detail .border-box .order-item .title .type {
+  color: #1aad19;
+}
+#order-detail .border-box .order-item .order-line {
+  margin-bottom: 10px;
+  background: #FFFFFF;
+  font-size: 15px;
+}
+#order-detail .border-box .order-item .order-line .item-top .indent {
+  line-height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+#order-detail .border-box .order-item .order-line .item-top .indent .order-num {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1;
+  padding-right: 10px;
+}
+#order-detail .border-box .order-item .order-line .item-top .indent .order-num span {
+  font-weight: bold;
+}
+#order-detail .border-box .order-item .order-line .item-top .indent .user {
+  color: #959595;
+}
+#order-detail .border-box .order-item .order-line .item-top .indent .user i {
+  color: #e73237;
+  margin-right: 5px;
+}
+#order-detail .border-box .order-item .order-line .item-middle .middle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px 15px;
+  color: #959595;
+}
+#order-detail .border-box .order-item .order-line .item-middle .middle-item .goods {
+  display: flex;
+}
+#order-detail .border-box .order-item .order-line .item-middle .middle-item .goods image {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #e5e5e5;
+}
+#order-detail .border-box .order-item .order-line .item-middle .middle-item .goods .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding-left: 10px;
+  overflow: hidden;
+}
+#order-detail .border-box .order-item .order-line .item-middle .middle-item .goods .text .names {
+  font-size: 17px;
+  color: #000000;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 22px;
+}
+#order-detail .border-box .order-item .order-line .item-middle .middle-item .goods .text .model {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+#order-detail .border-box .order-item .order-line .item-middle .middle-item .goods .text .model .money {
+  color: #ee2b1d;
+}
+#order-detail .border-box .order-item .order-line .item-middle .middle-item .goods .text .model .num {
+  color: #959595;
+}
+#order-detail .border-box .order-item .order-line .item-middle .middle-item .service {
+  margin-top: 10px;
+  color: #959595;
+  font-size: 13px;
+  border-radius: 3px;
+  min-width: 72px;
+  text-align: center;
+  padding: 5px 15px;
+  border: 1px solid #959595;
+}
+#order-detail .border-box .order-item .order-line .item-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  font-size: 15px;
+}
+#order-detail .border-box .order-item .order-line .item-bottom .guide {
+  color: #959595;
+}
+#order-detail .border-box .order-item .order-line .item-bottom .guide span {
+  color: #000000;
+}
+#order-detail .border-box .order-item .order-line .item-bottom .all-money span {
+  color: #ee2b1d;
+}
+#order-detail .border-box .order-item .order-info {
+  padding: 10px 15px;
+  background: #FFFFFF;
+}
+#order-detail .border-box .order-item .order-info .info-item {
+  display: flex;
+  padding: 2px 0;
+}
+#order-detail .border-box .order-item .order-info .info-item .name {
+  width: 80px;
+  color: #959595;
+}
+#order-detail .border-box .order-item .order-info .info-item .text {
+  flex: 1;
+}
+#order-detail .border-box .order-item .down-box {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background: #FFFFFF;
+}
+#order-detail .border-box .order-item .down-box .img-box {
+  overflow: visible;
+}
+#order-detail .border-box .order-item .down-box .img-box .img-item {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  display: inline-block;
+  margin-right: 20px;
+}
+#order-detail .border-box .order-item .down-box .img-box .img-item image {
+  width: 100%;
+  height: 100%;
+}
+#order-detail .border-box .order-item .down-box .img-box .img-item icon {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+}
+#order-detail .border-box .order-item .down-box .down {
+  width: 72px;
+  height: 72px;
+  border: 1px solid #cccccc;
+  text-align: center;
+  line-height: 72px;
+  overflow: hidden;
+}
+#order-detail .border-box .order-item .down-box .down i {
+  font-size: 18px;
+  color: #cccccc;
+}
+#order-detail .border-box .send .logistics {
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px 15px;
+}
+#order-detail .border-box .send .logistics .text {
+  width: 80px;
+}
+#order-detail .border-box .send .logistics .input-box {
+  position: relative;
+  z-index: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+#order-detail .border-box .send .logistics .input-box picker {
+  width: 100%;
+}
+#order-detail .border-box .send .logistics .input-box input {
+  width: 100%;
+}
+#order-detail .border-box .send .logistics .input-box i {
+  color: #c8c8c8;
+}
+#order-detail .border-box .send .Waybill {
+  background: #FFFFFF;
+  padding: 10px 15px;
+}
+#order-detail .border-box .send .Waybill input {
+  position: relative;
+  padding: 10px 0;
+  z-index: 0;
+}
+#order-detail .border-box .order-detail-info {
+  padding: 10px 15px;
+  font-size: 14px;
+  margin-top: 10px;
+  background: #FFFFFF;
+}
+#order-detail .border-box .order-detail-info .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#order-detail .border-box .order-detail-info .item .name {
+  color: #8a8a8a;
+  width: 80px;
+  text-align: right;
+}
+#order-detail .border-box .order-detail-info .item .name.big {
+  color: #000000;
+  font-weight: bold;
+}
+#order-detail .border-box .order-detail-info .item .big-money {
+  color: #ed0000;
+  font-weight: bold;
+}
+#order-detail .button-type {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  text-align: center;
+  overflow: hidden;
+}
+#order-detail .button-type .type-submit {
+  display: flex;
+  align-items: center;
+}
+#order-detail .button-type .type-submit .clone {
+  width: 115px;
+  color: #000000;
+  background: #FFFFFF;
+}
+#order-detail .button-type .type-submit .pay {
+  flex: 1;
+  background: #1aad19;
+  color: #FFFFFF;
+}
+#order-detail .button-type .type-submit .pay i {
+  color: #FFFFFF;
+}
+#order-detail .button-type .send {
+  background: #1aad19;
+  color: #FFFFFF;
+}
+#order-detail .pay-type .mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#order-detail .pay-type .type-box {
+  background: #FFFFFF;
+  position: fixed;
+  z-index: 210;
+  width: 85%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  overflow: hidden;
+  text-align: center;
+}
+#order-detail .pay-type .type-box .title {
+  padding: 10px 0;
+  font-size: 18px;
+}
+#order-detail .pay-type .type-box .pay-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+}
+#order-detail .pay-type .type-box .pay-item .left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+#order-detail .pay-type .type-box .pay-item .left .iconfont {
+  font-size: 40px;
+}
+#order-detail .pay-type .type-box .pay-item .left .iconfont.icon-zhifubao {
+  color: #34b4fe;
+}
+#order-detail .pay-type .type-box .pay-item .left .iconfont.icon-weixin {
+  color: #67b247;
+}
+#order-detail .pay-type .type-box .pay-item .left .iconfont.icon-xianjin {
+  color: #f5a623;
+}
+#order-detail .pay-type .type-box .pay-item .left .iconfont.icon-yinlianqia {
+  color: #272636;
+}
+#order-detail .pay-type .type-box .pay-item .left .info-box {
+  font-size: 14px;
+  text-align: left;
+  margin-left: 10px;
+}
+#order-detail .pay-type .type-box .pay-item .left .info-box .text {
+  color: #9b9b9b;
+  font-size: 12px;
+}
+#order-detail .pay-type .type-box .buttom-box {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+#order-detail .pay-type .type-box .buttom-box view {
+  flex: 1;
+  width: 0%;
+}
+#order-detail .pay-type .type-box .buttom-box .close {
+  color: #9b9b9b;
+}
+#order-detail .pay-type .type-box .buttom-box .submit {
+  color: #d70c18;
+}
