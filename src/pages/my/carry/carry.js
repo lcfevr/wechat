@@ -1,4 +1,4 @@
-import { is, config } from '../../../lib/myapp.js';
+import { is, config } from '../../../es6/myapp.js';
 Page({
 	data: {
 		list: [],

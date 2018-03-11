@@ -1,4 +1,4 @@
-import {is,config,sandBox} from '../../../lib/myapp.js';
+import {is,config,sandBox} from '../../../es6/myapp.js';
 Page({
     data:{
         tellphone:"",

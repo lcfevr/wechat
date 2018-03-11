@@ -2,7 +2,7 @@
  * Created by admin on 2018/1/16.
  */
 import Animation from '../../../utils/animation.js'
-import {config, sandBox} from '../../../lib/myapp.js'
+import {config, sandBox} from '../../../es6/myapp.js'
 Page({
     data:{
         show_select:true,

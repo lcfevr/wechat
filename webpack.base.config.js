@@ -55,13 +55,14 @@ function getDir(str) {
 
 
 
+
 module.exports = {
-    context: path.join(__dirname, 'src/es6'),
+    // context: path.join(__dirname, 'src/es6'),
     entry: {
-        myapp:'./myapp.js'
+        myapp:'./src/es6/myapp.js'
     },
     output: {
-        path: path.join(__dirname, 'dist/src/lib'),
+        path: path.join(__dirname, 'dist/src'),
         filename: '[name].js',
         libraryTarget: 'umd'
     },
@@ -75,6 +76,7 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /node_modules/
             },
+
         ]
     },
     plugins: [

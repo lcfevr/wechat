@@ -1,4 +1,4 @@
-import {config} from '../../../lib/myapp.js'
+import {config} from '../../../es6/myapp.js'
 Page({
 	data: {
 		orderList: [],

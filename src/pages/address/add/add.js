@@ -1,4 +1,4 @@
-// import {config,is,pageLogin,getUrl} from '../../../lib/myapp.js';
+import {config,is,pageLogin,getUrl} from '../../../es6/myapp';
 import CHINADATA from '../../../utils/china-area-data'
 Page({
 	data: {
@@ -14,8 +14,8 @@ Page({
                 value: '北京市市辖区',
                 code: '110100',
 
-            },
 
+            },
             district: {
                 value: '东城区',
                 code: '110101',

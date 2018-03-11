@@ -2,7 +2,7 @@ import {
     is,
     sandBox,
     config
-} from '../../../lib/myapp.js'
+} from '../../../es6/myapp.js'
 
 Page({
     data: {

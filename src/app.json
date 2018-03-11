@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/address/add/add",
     "pages/user/login/login",
     "pages/user/index/index",
     "pages/user/reset/reset",
@@ -9,9 +10,8 @@
     "pages/my/index/index",
     "pages/my/achievement/achievement",
     "pages/my/carry/carry",
-    "pages/address/index/index",
-    "pages/address/list/list",
-    "pages/address/add/add",
+
+
     "pages/order/ticket/ticket",
     "pages/user/changeScore/changeScore"
 
@@ -29,7 +29,7 @@
     "selectedColor":"#e63237",
     "list": [
       {
-        "pagePath":"pages/store/cart/cart",
+        "pagePath":"pages/user/index/index",
         "text": "收银台",
         "iconPath": "assets/image/money.png",
         "selectedIconPath": "assets/image/money-red.png"

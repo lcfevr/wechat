@@ -1,7 +1,7 @@
 /**
  * Created by admin on 2017/12/4.
  */
-import {is, config} from '../../../lib/myapp.js';
+import {is, config} from '../../../es6/myapp.js';
 Page({
     data: {
         order_no: '',
