@@ -1,19 +1,8 @@
 {
   "pages":[
-    "pages/address/add/add",
-    "pages/user/login/login",
     "pages/user/index/index",
-    "pages/user/reset/reset",
-    "pages/order/index/index",
-    "pages/order/detail/detail",
-    "pages/order/search/search",
-    "pages/my/index/index",
-    "pages/my/achievement/achievement",
-    "pages/my/carry/carry",
+    "pages/user/login/login"
 
-
-    "pages/order/ticket/ticket",
-    "pages/user/changeScore/changeScore"
 
   ],
   "window":{

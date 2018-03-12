@@ -6,16 +6,18 @@
     var notify = require('gulp-notify');
     var merge = require('merge-stream')
     var plumber = require('gulp-plumber')
+    var rename = require('gulp-rename')
 
-    function getFile(){
-        var filePath = fs.readdirSync(path.resolve('./src/pages'))
+    function getFile(type){
+        if (typeof type !== 'string') return;
+            var filePath = fs.readdirSync(path.resolve('./src/pages'))
         var fileArr = []
         filePath.forEach(function(item){
             var pagePath = path.join('./src/pages',item)
             var pageFiles = fs.readdirSync(pagePath)
 
             pageFiles.forEach(function(v) {
-                var lastPath = path.join(pagePath,v,v + '.less')
+                var lastPath = path.join(pagePath,v,v + '.'+ type)
 
                 fileArr.push(lastPath.split('\\').join('/'))
             })
@@ -25,16 +27,19 @@
     }
 
 
-    var files = getFile();
+    var files = getFile('less');
+
+
     gulp.task('less', function () {
 
         var tasks = files.map(function(item){
+
             return gulp.src('./'+ item)
 
                 .pipe(less())
-                .pipe(gulp.dest('./'+ path.join(item,'..')))
+                .pipe(gulp.dest(path.join(item,'..')))
                 .pipe(minifycss())
-                .pipe(gulp.dest('./'+ path.join(item,'..')))
+                .pipe(gulp.dest(path.join(item,'..')))
                 .pipe(notify({message:'ok'}))
         })
 
@@ -45,7 +50,19 @@
 
 
 
+    gulp.task('changeFileName',['less'],function(){
+        var files = getFile('css')
+        var tasks = files.map(function(v){
+            return gulp.src(v)
+                .pipe(rename(function(path){
+                    path.extname = ".wxss"
+                }))
+                .pipe(gulp.dest(path.join(v,'..')))
+        })
+    })
+
+    gulp.watch(getFile('less'),['less','changeFileName'])
 
 
-    gulp.task('default',['less']);
+    gulp.task('default',['less','changeFileName']);
 

@@ -11,20 +11,10 @@ var path = require('path');
 var fs = require('fs')
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin')
-var glob = require('glob')
 
 
-// function getEntry() {
-//     var entry = [];
-//     var srcDirName = './src/utils/*.js'; //入口文件夹路径
-//     glob.sync(srcDirName).forEach(function (name) {        //n 获取文件名字
-//         var n = name.slice(0, name.length - 3);
-//         n = n.slice(n.lastIndexOf('/')).split("/")[1];
-//         entry.push(name.replace('src/', ''));
-//     });
-//
-//     return entry;
-// }
+
+
 
 
 function getDir(str) {
