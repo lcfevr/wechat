@@ -29,7 +29,6 @@
 
     var files = getFile('less');
 
-
     gulp.task('less', function () {
 
         var tasks = files.map(function(item){
@@ -59,10 +58,16 @@
                 }))
                 .pipe(gulp.dest(path.join(v,'..')))
         })
+
+
+        return merge(...tasks)
     })
 
-    gulp.watch(getFile('less'),['less','changeFileName'])
-
+    // var watcher =  gulp.watch('src/pages/**/**/*.less',['less','changeFileName'])
+    //
+    // watcher.on('change',function(event){
+    //     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+    // })
 
     gulp.task('default',['less','changeFileName']);
 
