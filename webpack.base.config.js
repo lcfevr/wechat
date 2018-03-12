@@ -76,7 +76,9 @@ module.exports = {
                 ignore: [
                     'es6/*.js',
                     'pages/**/*.less',
+                    'pages/**/*.css',
                     'pages/**/**/*.less',
+                    'pages/**/**/*.css',
 
                 ],
                 copyUnmodified: true

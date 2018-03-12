@@ -7,6 +7,8 @@
     var merge = require('merge-stream')
     var plumber = require('gulp-plumber')
     var rename = require('gulp-rename')
+    var yargs = require('yargs')
+
 
     function getFile(type){
         if (typeof type !== 'string') return;
@@ -63,11 +65,14 @@
         return merge(...tasks)
     })
 
-    // var watcher =  gulp.watch('src/pages/**/**/*.less',['less','changeFileName'])
-    //
-    // watcher.on('change',function(event){
-    //     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-    // })
 
-    gulp.task('default',['less','changeFileName']);
+
+        gulp.watch('src/pages/**/**/*.less',['less','changeFileName'])
+
+        gulp.task('default',['less','changeFileName']);
+
+
+
+
+
 
